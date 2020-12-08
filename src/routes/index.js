@@ -16,8 +16,8 @@ app.post('/tickets', db.createTicket);
 app.put('/tickets/:id', db.updateTicket);
 app.delete('/tickets/:id', db.deleteTicket);
 
-app.listen(port, () => {
-  console.log(`App running on port ${port}.`);
-});
+// app.listen(port, () => {
+//   console.log(`App running on port ${port}.`);
+// });
 
 module.exports = app;
