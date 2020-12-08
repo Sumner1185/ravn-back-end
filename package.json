@@ -4,7 +4,8 @@
   "description": "Final project back end",
   "main": "index.js",
   "scripts": {
-    "test": "Jest"
+    "test": "Jest",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
