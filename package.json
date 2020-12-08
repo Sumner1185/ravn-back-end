@@ -1,0 +1,19 @@
+{
+  "name": "retro-tools-api",
+  "version": "1.0.0",
+  "description": "Final project back end",
+  "main": "index.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sumner1185/ravn-back-end.git"
+  },
+  "author": "Team RAVN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sumner1185/ravn-back-end/issues"
+  },
+  "homepage": "https://github.com/Sumner1185/ravn-back-end#readme"
+}
