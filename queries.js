@@ -1,11 +1,23 @@
 const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'me',
-  host: 'localhost',
-  database: 'api',
-  password: 'password',
-  port: 5432,
-})
+let pool
+
+if (process.env.NODE_ENV === 'development') {
+    pool = new Pool({
+        user: 'me',
+        host: 'localhost',
+        database: 'test-api',
+        password: 'password',
+        port: 5432,
+    })
+} else {
+    pool = new Pool({
+        user: 'me',
+        host: 'localhost',
+        database: 'api',
+        password: 'password',
+        port: 5432,
+    })
+}
 
 
 const createCategories = (tickets) => {
