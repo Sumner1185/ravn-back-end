@@ -4,7 +4,7 @@
   "description": "Final project back end",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --coverage",
+    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
     "start": "nodemon --exec babel-node ./src/routes/index",
     "prestart": "babel ./src --out-dir build",
     "startProd": "node ./build/routes/index",
