@@ -1,0 +1,3 @@
+CREATE ROLE me WITH LOGIN PASSWORD 'password';
+\du
+\q
