@@ -15,4 +15,4 @@ app.use(
 
 app.use('/', indexRouter);
 
-module.exports = app
+module.exports = app;
