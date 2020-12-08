@@ -2,4 +2,5 @@ node_modules/
 coverage.data
 coverage/
 .env
+.nyc_output
 build/
