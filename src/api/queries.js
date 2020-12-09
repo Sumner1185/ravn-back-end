@@ -1,15 +1,15 @@
 const Pool = require('pg').Pool;
 let pool;
 
-if (process.env.NODE_ENV === 'development') {
-  pool = new Pool({
-    user: 'me',
-    host: 'localhost',
-    database: 'test-api',
-    password: 'password',
-    port: 5432,
-  });
-} else {
+// if (process.env.NODE_ENV === 'development') {
+//   pool = new Pool({
+//     user: 'me',
+//     host: 'localhost',
+//     database: 'test-api',
+//     password: 'password',
+//     port: 5432,
+//   });
+// } else {
   pool = new Pool({
     user: 'me',
     host: 'localhost',
@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'development') {
     password: 'password',
     port: 5432,
   });
-}
+// }
 
 const createCategories = (tickets) => {
   let categorisedData = {
@@ -41,7 +41,6 @@ const getTickets = (request, response) => {
     }
 
     const formatedResults = createCategories(results.rows);
-
     response.status(200).json(formatedResults);
   });
 };
@@ -60,16 +59,18 @@ const getTicketsById = (request, response) => {
 };
 
 const createTicket = (request, response) => {
+  console.log(request.body)
   const { name, description, category } = request.body;
 
   pool.query(
-    'INSERT INTO tickets (name, description, category) VALUES ($1, $2, $3)',
+    'INSERT INTO tickets (name, description, category) VALUES ($1, $2, $3) RETURNING id;',
     [name, description, category],
     (error, results) => {
       if (error) {
         throw error;
       }
-      response.status(201).send(`Ticket added with ID: ${results.insertId}`);
+      console.log(results)
+      response.status(201).send(`Ticket added with ID: ${results.rows[0].id}`);
     }
   );
 };

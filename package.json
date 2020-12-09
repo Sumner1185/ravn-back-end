@@ -2,12 +2,12 @@
   "name": "retro-tools-api",
   "version": "1.0.0",
   "description": "Final project back end",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
-    "start": "nodemon --exec babel-node ./src/routes/start",
+    "start": "nodemon --exec babel-node ./src/start",
     "prestart": "babel ./src --out-dir build",
-    "startProd": "node ./build/routes/index",
+    "startProd": "node ./build/src/start",
     "lint": "./node_modules/.bin/eslint ./src",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "npm run lint --fix"
