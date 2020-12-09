@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'development') {
   pool = new Pool({
     user: 'me',
     host: 'localhost',
-    database: 'test-api',
+    database: 'test_api',
     password: 'password',
     port: 5432,
   });
