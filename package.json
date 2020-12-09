@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
-    "start": "nodemon --exec babel-node ./src/routes/index",
+    "start": "nodemon --exec babel-node ./src/routes/start",
     "prestart": "babel ./src --out-dir build",
     "startProd": "node ./build/routes/index",
     "lint": "./node_modules/.bin/eslint ./src",

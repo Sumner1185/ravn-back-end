@@ -1,7 +1,6 @@
 const express = require('express');
 const db = require('../api/queries');
 const app = express();
-const port = 3000;
 
 app.get('/', (request, response) => {
   response.json({
